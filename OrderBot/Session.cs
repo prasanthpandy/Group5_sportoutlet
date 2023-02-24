@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace OrderBot
 {
@@ -24,19 +24,19 @@ namespace OrderBot
             switch (this.nCur)
             {
                 case State.WELCOMING:
-                    aMessages.Add("Welcome to Rich's Shawarama!");
-                    aMessages.Add("What size would you like?");
+                    aMessages.Add("Welcome to Group 5 Sports Outlet!");
+                    aMessages.Add("Would you like to purchase sports costume or sports goods?");
                     this.nCur = State.SIZE;
                     break;
                 case State.SIZE:
                     this.oOrder.Size = sInMessage;
                     this.oOrder.Save();
-                    aMessages.Add("What protein would you like on this  " + this.oOrder.Size + " Shawarama?");
+                    aMessages.Add("What goods would you like to buy from " + this.oOrder.Size + "sports goods ?");
                     this.nCur = State.PROTEIN;
                     break;
                 case State.PROTEIN:
                     string sProtein = sInMessage;
-                    aMessages.Add("What toppings would you like on this (1. pickles 2. Tzaki) " + this.oOrder.Size + " " + sProtein + " Shawarama?");
+                    aMessages.Add("Goods size would you like on this (1. size 7 2. size 8) " + this.oOrder.Size + " " + sProtein + " sports goods?");
                     break;
 
 
